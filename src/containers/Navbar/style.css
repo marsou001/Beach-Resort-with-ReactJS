@@ -1,0 +1,130 @@
+nav {
+    font-weight: 600;
+    background-color: #fff;
+    text-align: center;
+    position: fixed;
+    top: 0;    
+    width: 100vw;
+    padding: 20px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+}
+
+.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    display: inline-block;
+    width: fit-content;
+    padding: 10px;
+    border: 3px solid #333;
+}
+
+#logo a {
+    letter-spacing: 4px;
+    -webkit-text-shadow: 0 1px 2px;
+    -moz-text-shadow: 0 1px 2px;
+    text-shadow: 0 1px 2px;
+}
+
+#logo a span {
+    color: #b39d30;
+}
+
+.toggleBars {
+    position: relative;
+    display: inline-block;
+    margin-right: 40px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.toggleBars .bar {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.bar1.change {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    -moz-transform: rotate(-45deg) translate(-9px, 6px) ;
+    -ms-transform: rotate(-45deg) translate(-9px, 6px) ;
+    -o-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+  
+.bar2.change {
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+}
+  
+.bar3.change {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    -moz-transform: rotate(45deg) translate(-8px, -8px) ;
+    -ms-transform: rotate(45deg) translate(-8px, -8px) ;
+    -o-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+.resize-animation-stopper * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+.links a {
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    -ms-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.links a:hover {
+    color: #b39d30;
+}
+
+@media screen and (min-width: 992px) {
+    nav {
+        text-align: left;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: baseline;
+    }
+
+    nav .container #logo {
+        width: 280px;
+    }
+
+    nav .container .toggleBars {
+        display: none;
+    }  
+
+    nav .links {
+        margin-left: 30px;
+    }
+
+    nav .links a {
+        width: fit-content;
+        margin-top: 0;
+        padding: 0 20px;
+    }      
+}
