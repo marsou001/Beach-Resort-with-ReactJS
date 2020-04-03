@@ -1,0 +1,130 @@
+.featuredRooms h1 {
+    font-size: 1em;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 30px;
+}
+
+.featuredRooms hr {
+    background-color: #b39d30;
+    width: 30%;
+    margin: 40px auto;
+}
+
+.featuredRooms .roomsBox {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-row-gap: 40px;
+    grid-template-areas: "first"
+                         "second"
+                         "third";
+    width: 80%;
+    margin: auto;
+}
+
+.featuredRooms .roomsBox .roomsBoxItem {
+    position: relative;
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.featuredRooms .roomsBox .roomsBoxItem:hover .link {
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.featuredRooms .roomsBox .roomsBoxItem:hover .price {
+    opacity: 0;
+}
+
+.featuredRooms .roomsBox .roomsBoxItem .link {
+    background-color: rgba(0, 0, 0, 0.0);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    transition: all 0.5s 0.2s;
+}
+
+.featuredRooms .roomsBox .roomsBoxItem .link a {
+    color: #000;
+    background-color: #b39d30;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 15px;
+}
+
+.featuredRooms .roomsBox .roomsBoxItem .price,
+.featuredRooms .roomsBox .roomsBoxItem .deluxe {
+    position: absolute;
+}
+
+.featuredRooms .roomsBox .roomsBoxItem .price {
+    color: #eee;
+    background-color: rgba(0, 0, 0,  0.7);
+    font-size: 0.8em;
+    text-align: center;
+    line-height: 23px;
+    top: 0;
+    left: 0;
+    padding: 15px 20px;
+    border-bottom-right-radius: 30px;
+    transition: opacity 0.2s 0.2s;
+}
+
+.featuredRooms .roomsBox .roomsBoxItem .price .priceTag {
+    letter-spacing: 5px;
+    display: block;
+}
+
+.featuredRooms .roomsBox .roomsBoxItem .price .perNight {
+    font-size: 0.7em;
+}
+
+.featuredRooms .roomsBox .roomsBoxItem .deluxe {
+    color: #333;
+    background-color: #bbb;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-align: center;    
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    bottom: 0;    
+    width: 100%;   
+    padding: 10px 20px;
+    box-sizing: border-box;  
+}
+
+.featuredRooms .roomsBox img {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width: 992px) {
+    .featuredRooms .roomsBox {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 200px;
+        grid-column-gap: 2%;
+        grid-template-areas: "first second third"; 
+        width: 95%;                      
+    }
+
+    .featuredRooms .roomsBox .roomsBoxItem {
+        height: 270px;
+        margin-bottom: 60px;
+    }
+
+    .featuredRooms .roomsBox .roomsBoxItem .price {
+        font-size: 0.6em;
+        padding: 10px 15px;
+    }
+
+    .featuredRooms .roomsBox .roomsBoxItem .deluxe {
+        font-size: 0.6em;
+    }
+}
