@@ -27,7 +27,7 @@ function Navbar() {
         MozOpacity : 1,
         KhtmlOpacity: 1,
         opacity: 1,
-        marginTop: 10,
+        marginTop: 0,
     }
 
     const toggleNavbar = () => {

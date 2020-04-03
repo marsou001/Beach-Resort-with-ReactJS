@@ -4,6 +4,7 @@ nav {
     text-align: center;
     position: fixed;
     top: 0;    
+    z-index: 1;
     width: 100vw;
     padding: 20px;
 }
@@ -84,7 +85,7 @@ nav a {
 .resize-animation-stopper * {
     animation: none !important;
     transition: none !important;
-  }
+}
 
 .links a {
     display: inline-block;
@@ -108,21 +109,24 @@ nav a {
         display: -ms-flexbox;
         display: flex;
         align-items: baseline;
+        padding: 10px;
     }
 
     nav .container #logo {
-        width: 280px;
+        font-size: 25px;
+        width: 230px;
     }
 
     nav .container .toggleBars {
         display: none;
     }  
 
-    nav .links {
+    nav .links {        
         margin-left: 30px;
     }
 
     nav .links a {
+        font-size: 25px;
         width: fit-content;
         margin-top: 0;
         padding: 0 20px;

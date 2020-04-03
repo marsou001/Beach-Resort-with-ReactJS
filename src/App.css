@@ -2,10 +2,20 @@ html , body {
   height: 100%;
 }
 
+* {
+  margin:0;
+  padding: 0;
+}
+
 body {
   font-size: 36px;
-  background-image: url("./images/defaultBgd.jpeg");
+  /* background-image: url("./images/defaultBgd.jpeg");
   background-position: 50%;
-  background-size: cover;
+  background-size: cover; */
+}  
+
+#root {
+  height: 100%;
 }
+
 
