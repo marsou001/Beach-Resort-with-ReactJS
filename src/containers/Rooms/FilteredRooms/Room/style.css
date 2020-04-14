@@ -1,0 +1,100 @@
+.filteredRooms .rooms .room {
+    position: relative;
+    height: 300px;
+    -webkit-box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.filteredRooms .rooms .room img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;    
+}        
+
+.filteredRooms .rooms .room:hover .link {
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.filteredRooms .rooms .room:hover .price {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+}
+
+.filteredRooms .rooms .room .link {
+    background-color: rgba(0, 0, 0, 0.0);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    -webkit-transition: all 0.5s 0.2s;
+    -moz-transition: all 0.5s 0.2s;
+    -ms-transition: all 0.5s 0.2s;
+    -o-transition: all 0.5s 0.2s;
+    transition: all 0.5s 0.2s;
+}
+
+.filteredRooms .rooms .room .link a {
+    color: #000;
+    background-color: #b39d30;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 15px;
+}
+
+.filteredRooms .rooms .room .price,
+.filteredRooms .rooms .room .deluxe {
+    position: absolute;
+}
+
+.filteredRooms .rooms .room .price {
+    color: #eee;
+    background-color: rgba(0, 0, 0,  0.7);
+    font-size: 0.8em;
+    text-align: center;
+    line-height: 23px;
+    top: 0;
+    left: 0;
+    padding: 15px 20px;
+    border-bottom-right-radius: 30px;
+    -webkit-transition: opacity 0.2s 0.2s, filter 0.2s 0.2s;
+    -moz-transition: opacity 0.2s 0.2s, filter 0.2s 0.2s;
+    -ms-transition: opacity 0.2s 0.2s, filter 0.2s 0.2s;
+    -o-transition: opacity 0.2s 0.2s, filter 0.2s 0.2s;
+    transition: opacity 0.2s 0.2s, filter 0.2s 0.2s;
+}
+
+.filteredRooms .rooms .room .price .priceTag {
+    letter-spacing: 5px;
+    display: block;
+}
+
+.filteredRooms .rooms .room .price .perNight {
+    font-size: 0.7em;
+}
+
+.filteredRooms .rooms .room .deluxe {
+    color: #333;
+    background-color: #bbb;
+    font-size: 0.5em;
+    font-weight: 700;
+    text-align: center;    
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    bottom: 0;    
+    width: 100%;   
+    padding: 10px 20px;
+    -webkit-box-sizing: border-box;  
+    -moz-box-sizing: border-box;  
+    box-sizing: border-box;  
+}

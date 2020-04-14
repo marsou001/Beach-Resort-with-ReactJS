@@ -1,0 +1,19 @@
+.room {
+    height: 100%;
+}
+
+main {
+    padding: 10px;
+}
+
+@media (min-width: 992px) {
+    main {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        padding: 40px;
+    }
+}

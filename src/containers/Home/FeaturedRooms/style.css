@@ -1,3 +1,7 @@
+.featuredRooms {
+    padding: 20px;
+}
+
 .featuredRooms h1 {
     font-size: 1em;
     text-align: center;
@@ -12,19 +16,20 @@
 }
 
 .featuredRooms .roomsBox {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr;
     grid-template-rows: 1fr;
-    grid-row-gap: 40px;
-    grid-template-areas: "first"
-                         "second"
-                         "third";
-    width: 80%;
+    grid-gap: 20px;
     margin: auto;
 }
 
 .featuredRooms .roomsBox .roomsBoxItem {
     position: relative;
+    -webkit-box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.4);
     box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.4);
 }
 
@@ -34,6 +39,10 @@
 }
 
 .featuredRooms .roomsBox .roomsBoxItem:hover .price {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
     opacity: 0;
 }
 
@@ -44,19 +53,26 @@
     right: 0;
     bottom: 0;
     left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: -1;
+    -webkit-transition: all 0.5s 0.2s;
+    -moz-transition: all 0.5s 0.2s;
+    -ms-transition: all 0.5s 0.2s;
+    -o-transition: all 0.5s 0.2s;
     transition: all 0.5s 0.2s;
 }
 
 .featuredRooms .roomsBox .roomsBoxItem .link a {
+    font-size: 20px;
     color: #000;
     background-color: #b39d30;
     text-decoration: none;
     display: inline-block;
-    padding: 5px 15px;
+    padding: 5px 10px;
 }
 
 .featuredRooms .roomsBox .roomsBoxItem .price,
@@ -67,14 +83,18 @@
 .featuredRooms .roomsBox .roomsBoxItem .price {
     color: #eee;
     background-color: rgba(0, 0, 0,  0.7);
-    font-size: 0.8em;
+    font-size: 0.6em;
     text-align: center;
     line-height: 23px;
     top: 0;
     left: 0;
-    padding: 15px 20px;
+    padding: 5px 10px;
     border-bottom-right-radius: 30px;
-    transition: opacity 0.2s 0.2s;
+    -webkit-transition: opacity 0.2s 0.2s, filter 0.2s 0.2s;
+    -moz-transition: opacity 0.2s 0.2s, filter 0.2s 0.2s;
+    -ms-transition: opacity 0.2s 0.2s, filter 0.2s 0.2s;
+    -o-transition: opacity 0.2s 0.2s, filter 0.2s 0.2s;
+    transition: opacity 0.2s 0.2s, filter 0.2s 0.2s;
 }
 
 .featuredRooms .roomsBox .roomsBoxItem .price .priceTag {
@@ -89,7 +109,7 @@
 .featuredRooms .roomsBox .roomsBoxItem .deluxe {
     color: #333;
     background-color: #bbb;
-    font-size: 0.8em;
+    font-size: 0.5em;
     font-weight: 700;
     text-align: center;    
     text-transform: capitalize;
@@ -97,27 +117,36 @@
     bottom: 0;    
     width: 100%;   
     padding: 10px 20px;
+    -webkit-box-sizing: border-box;  
+    -moz-box-sizing: border-box;  
     box-sizing: border-box;  
 }
 
 .featuredRooms .roomsBox img {
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
-@media screen and (min-width: 992px) {
-    .featuredRooms .roomsBox {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 200px;
-        grid-column-gap: 2%;
-        grid-template-areas: "first second third"; 
-        width: 95%;                      
+@media (min-width: 600px) {
+    .featuredRooms .roomsBox .roomsBoxItem .price {
+        font-size: 0.8em;
+        padding: 15px 20px;
     }
+    
+    .featuredRooms .roomsBox .roomsBoxItem .link a {
+        font-size: 36px;
+        padding: 5px 15px;
+    }
+}
 
-    .featuredRooms .roomsBox .roomsBoxItem {
-        height: 270px;
-        margin-bottom: 60px;
-    }
+@media (min-width: 992px) {
+    .featuredRooms .roomsBox {
+        -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        -ms-grid-rows: 200px;        
+    }    
 
     .featuredRooms .roomsBox .roomsBoxItem .price {
         font-size: 0.6em;

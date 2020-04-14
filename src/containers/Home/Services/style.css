@@ -17,62 +17,48 @@
 
 .services .servicesBox {
     text-align: center;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-row-gap: 40px;    
-    grid-template-areas: "first"
-                         "second"
-                         "third"
-                         "fourth";
+    -ms-grid-rows: 1fr;
+    grid-template-rows: 1fr;
+    grid-row-gap: 40px;        
     padding: 20px;
     padding-bottom: 40px;
 }
 
 .services .servicesBox .servicesBoxItem i {
     color: #b39d30;
+    margin-bottom: 30px;
 }
 
 .services .servicesBox .servicesBoxItem h2 {
     font-size: 0.6em;
     letter-spacing: 4px;
     text-transform: capitalize;
+    margin-bottom: 10px;
 }
 
-.services .servicesBox .servicesBoxItem p {
-    font-size: 0.5em;
-}
-
-.services .servicesBox .servicesBoxItem.servicesBoxItem1 {
-    grid-area: first;
-}
-
-.services .servicesBox .servicesBoxItem.servicesBoxItem2 {
-    grid-area: second
-}
-
-.services .servicesBox .servicesBoxItem.servicesBoxItem3 {
-    grid-area: third;
-}
-
-.services .servicesBox .servicesBoxItem.servicesBoxItem4 {
-    grid-area: fourth;
+.services .servicesBox .servicesBoxItem p {    
+    font-size: 0.5em;    
+    width: 60%;
+    margin: auto;
 }
 
 @media screen and (min-width: 600px) {
     .services .servicesBox {
+        -ms-grid-columns: 1fr 1fr;
         grid-template-columns: repeat(2, 1fr);;
         grid-row-gap: 50px;
-        grid-column-gap: 10%;
-        grid-template-areas: "first second"
-                             "third fourth";
-    }
+        grid-column-gap: 10%;        
+    }   
 }
 
 @media screen and (min-width: 1200px) {
     .services .servicesBox {
+        -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: repeat(4, 1fr);
         grid-column-gap: 5%;
-        grid-template-areas: "first second third fourth";
-    }
+    }        
 }

@@ -1,13 +1,13 @@
 import React from 'react';
 import './style.css';
 
-function Rooms() {
+function FeaturedRooms() {
     return (
         <div className="featuredRooms">
             <h1>Featured Rooms</h1>
             <hr />
             <div className="roomsBox">
-                <div className="roomsBoxItem">
+                <div className="roomsBoxItem fit-box">
                     <div className="link">
                         <a href="#">Featured</a>
                     </div>
@@ -19,7 +19,7 @@ function Rooms() {
                         Family Deluxe
                     </div>
                 </div>
-                <div className="roomsBoxItem">
+                <div className="roomsBoxItem fit-box">
                     <div className="link">
                         <a href="#">Featured</a>
                     </div>
@@ -31,7 +31,7 @@ function Rooms() {
                         Double Deluxe
                     </div>
                 </div>
-                <div className="roomsBoxItem">
+                <div className="roomsBoxItem fit-box">
                     <div className="link">
                         <a href="#">Featured</a>
                     </div>
@@ -48,4 +48,4 @@ function Rooms() {
     )
 }
 
-export default Rooms;
+export default FeaturedRooms;

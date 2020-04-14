@@ -1,0 +1,55 @@
+.details {
+    font-size: 16px;
+    margin: 10px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.details .detailsBox,
+.details .infoBox {
+    width: 100%;
+    padding: 10px;
+}
+
+.details h1 {
+    letter-spacing: 4px;
+    margin: 40px 0;
+}
+
+.details p,
+.details ul {
+    color: #333;
+    font-weight: 500;
+}
+
+.details ul {
+    letter-spacing: 3px;
+    list-style-type: none;
+}
+
+.details ul li {
+    margin: 15px 0;
+}
+
+@media (min-width: 600px) {
+    .details {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    .details {
+        flex-direction: row;
+    }    
+
+    .details p {
+        width: 80%;
+    }
+
+    .details ul li {
+        margin: 30px 0;
+    }
+}
+

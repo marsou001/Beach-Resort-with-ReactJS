@@ -1,0 +1,30 @@
+.extras {
+    font-size: 16px;
+}
+
+.extras h1 {
+    font-size: 22px;
+    letter-spacing: 4px;
+    margin: 20px 0;
+}
+
+.extras .extrasList {
+    display: flex;
+    flex-direction: column;
+}
+
+.extras ul {
+    list-style-type: none;
+    margin-right: 5%;
+    margin-bottom: 10px;    
+}
+
+.extras ul li {
+    margin: 10px;
+}
+
+@media (min-width: 600px) {
+    .extras .extrasList {
+        flex-direction: row;
+    }
+}

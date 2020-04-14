@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 function Navbar() {
@@ -6,23 +7,45 @@ function Navbar() {
 
     const smallWidth = window.innerWidth < 992;
 
-    const change = smallWidth ?  (toggle ? "change" : "") : "";         
+    const MARGIN_TOP_FIRST = "opacity 0.2s 0.2s, margin-top 0.2s",
+             OPACITY_FIRST = "opacity 0.2s, margin-top 0.2s 0.2s";
 
-    const properties = {
-        marginTop: toggle ? 10 : -135, 
-        filter: toggle ? "alpha(opacity=100)" : "alpha(opacity=0)",
-        MozOpacity : toggle ? 1 : 0,
-        KhtmlOpacity: toggle ? 1 : 0,
-        opacity: toggle ? 1 : 0,        
-        WebkitTransition : toggle ? "opacity 0.2s 0.2s, margin-top 0.2s" : "opacity 0.2s, margin-top 0.2s 0.2s",
-        MozTransition : toggle ? "opacity 0.2s 0.2s, margin-top 0.2s" : "opacity 0.2s, margin-top 0.2s 0.2s",
-        MsTransition : toggle ? "opacity 0.2s 0.2s, margin-top 0.2s" : "opacity 0.2s, margin-top 0.2s 0.2s",
-        OTransition : toggle ? "opacity 0.2s 0.2s, margin-top 0.2s" : "opacity 0.2s, margin-top 0.2s 0.2s",
-        transition : toggle ? "opacity 0.2s 0.2s, margin-top 0.2s" : "opacity 0.2s, margin-top 0.2s 0.2s",
-        pointerEvents : toggle ? "auto" : "none"        
+    const change = smallWidth ?  (toggle ? "change" : "") : "";   
+    
+    const toggledProperties = {
+        marginTop: 10, 
+        MsFilter: "'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)'",
+        filter: "alpha(opacity=100)",
+        MozOpacity : 1,
+        KhtmlOpacity: 1,
+        opacity: 1,        
+        WebkitTransition : MARGIN_TOP_FIRST,
+        MozTransition : MARGIN_TOP_FIRST,
+        MsTransition : MARGIN_TOP_FIRST,
+        OTransition : MARGIN_TOP_FIRST,
+        transition : MARGIN_TOP_FIRST,
+        pointerEvents : "auto"     
     }
 
+    const notToggledProperties = {
+        marginTop: -135, 
+        MsFilter: "'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)'",
+        filter: "alpha(opacity=0)",
+        MozOpacity : 0,
+        KhtmlOpacity: 0,
+        opacity: 0,        
+        WebkitTransition : OPACITY_FIRST,
+        MozTransition : OPACITY_FIRST,
+        MsTransition : OPACITY_FIRST,
+        OTransition : OPACITY_FIRST,
+        transition : OPACITY_FIRST,
+        pointerEvents : "none" 
+    }    
+
+    const properties = toggle ? toggledProperties : notToggledProperties;
+
     const appear = smallWidth ? properties : {
+        MsFilter: "'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)'",
         filter : "alpha(opacity=100)",
         MozOpacity : 1,
         KhtmlOpacity: 1,
@@ -50,10 +73,10 @@ function Navbar() {
 
     return (
         <nav>
-            <div className="container">
+            <div className="container">                
                 <div id="logo">
-                    <a href="#">Beach <span>Resort</span></a>
-                </div>
+                    <Link to="/">Beach <span>Resort</span></Link>
+                </div>                
 
                 <div className="toggleBars" onClick={toggleNavbar}>                
                     <div className={`bar bar1 ${change}`}></div>
@@ -63,8 +86,8 @@ function Navbar() {
             </div>
 
             <div className="links" style={appear}>
-                <a href="#">Home</a>
-                <a href="#">Rooms</a>
+                <Link to="/">Home</Link>
+                <Link to="/rooms">Rooms</Link>
             </div>
         </nav>
     )

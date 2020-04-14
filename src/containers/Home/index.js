@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 import './style.css';
-import Hero from './Hero';
+import Front from './Front';
 import Services from './Services';
-import Rooms from './Rooms';
+import FeaturedRooms from './FeaturedRooms';
 
 function Home() {
     return (
         <div className="home">
-            <Hero />
+            <Front />
             <Services />
-            <Rooms />
+            <FeaturedRooms />
         </div>
     )
 }

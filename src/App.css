@@ -7,15 +7,24 @@ html , body {
   padding: 0;
 }
 
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
+}
+
 body {
-  font-size: 36px;
-  /* background-image: url("./images/defaultBgd.jpeg");
-  background-position: 50%;
-  background-size: cover; */
+  font-size: 36px;  
 }  
 
 #root {
   height: 100%;
 }
+
+.fit-box {  
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: 50% 50%;
+}
+
 
 
