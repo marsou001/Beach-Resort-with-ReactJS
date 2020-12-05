@@ -2,22 +2,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    grid-gap: 10px;
-    grid-template-areas: "first"
-                         "second"
-                         "third";
-}
-
-.room1 {
-    grid-area: first;
-}
-
-.room2 {
-    grid-area: second;
-}
-
-.room3 {
-    grid-area: third;
+    grid-gap: 10px;   
 }
 
 .images .room {
@@ -34,7 +19,6 @@
 @media (min-width: 600px) {
     .images {
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: "first second third";
     }
 }
 

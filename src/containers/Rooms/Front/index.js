@@ -7,6 +7,7 @@ function Front() {
     return (
         // <Hero image={require("../../../images/room-1.jpeg")}>
         <Hero image={Room1}>
+        {/* <Hero image="room-1"> */}
             <div className="front">
                 <h1>Our Rooms</h1>
                 <hr />

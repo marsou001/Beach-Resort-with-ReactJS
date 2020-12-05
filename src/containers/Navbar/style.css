@@ -8,6 +8,7 @@ nav {
     z-index: 1;
     width: 100vw;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 nav a {
@@ -28,7 +29,7 @@ nav a {
     display: inline-block;
     width: 150px;
     padding: 10px;
-    border: 3px solid #333;
+    border: 3px solid #333;    
 }
 
 #logo a {
@@ -45,7 +46,6 @@ nav a {
 .toggleBars {
     position: relative;
     display: inline-block;
-    margin-right: 20px;
     z-index: 1;
     cursor: pointer;
 }
@@ -102,16 +102,8 @@ nav a {
 }
 
 @media (min-width: 600px) {
-    nav {
-        padding: 20px;
-    }
-
     #logo {
         width: fit-content;
-    }
-
-    .toggleBars {
-        margin-right: 40px;
     }
 }
 
@@ -122,12 +114,11 @@ nav a {
         display: -ms-flexbox;
         display: flex;
         align-items: baseline;
-        padding: 10px;
     }
 
     nav .container #logo {
-        font-size: 25px;
-        width: 230px;
+        font-size: 20px;
+        width: fit-content;
     }
 
     nav .container .toggleBars {
@@ -139,7 +130,7 @@ nav a {
     }
 
     nav .links a {
-        font-size: 25px;
+        font-size: 22px;
         width: fit-content;
         margin-top: 0;
         padding: 0 20px;

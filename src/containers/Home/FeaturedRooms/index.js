@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 function FeaturedRooms() {
@@ -9,7 +10,7 @@ function FeaturedRooms() {
             <div className="roomsBox">
                 <div className="roomsBoxItem fit-box">
                     <div className="link">
-                        <a href="#">Featured</a>
+                        <Link to="/rooms">Featured</Link>
                     </div>
                     <img src={require("../../../images/room-12.jpeg")} alt="blabla" title="blabla" />
                     <div className="price">
@@ -21,7 +22,7 @@ function FeaturedRooms() {
                 </div>
                 <div className="roomsBoxItem fit-box">
                     <div className="link">
-                        <a href="#">Featured</a>
+                    <   Link to="/rooms">Featured</Link>
                     </div>
                     <img src={require("../../../images/room-8.jpeg")} alt="blabla" title="blabla" />
                     <div className="price">
@@ -33,7 +34,7 @@ function FeaturedRooms() {
                 </div>
                 <div className="roomsBoxItem fit-box">
                     <div className="link">
-                        <a href="#">Featured</a>
+                        <Link to="/rooms">Featured</Link>
                     </div>
                     <img src={require("../../../images/room-4.jpeg")} alt="blabla" title="blabla" />
                     <div className="price">

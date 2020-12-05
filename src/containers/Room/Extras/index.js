@@ -9,13 +9,9 @@ function Extras() {
                 <ul>
                     <li>Plush pillows and breathable bed linens</li>
                     <li>Soft, oversized bath towels</li>
-                    <li>Full-sized, pH-balanced toiletries</li>
-                </ul>
-                <ul>
+                    <li>Full-sized, pH-balanced toiletries</li>                
                     <li>Complimentary refreshments</li>
-                    <li>Adequate safety/security</li>
-                </ul>
-                <ul>
+                    <li>Adequate safety/security</li>                
                     <li>Internet</li>
                     <li>Comfortable beds</li>
                 </ul>

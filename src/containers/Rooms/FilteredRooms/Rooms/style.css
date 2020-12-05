@@ -1,10 +1,37 @@
 .filteredRooms .rooms {
     display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));    
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));    
     grid-gap: 20px;
     justify-items: center;
     margin: 40px 0;
+}
+
+.filteredRooms .noRoomsFoundMessage {
+    font-size: 20px;
+    text-align: center;
+    height: 150px;
+    display: table;
+    width: 100%; 
+    margin: 0 auto;
+}
+
+.filteredRooms .noRoomsFoundMessage p {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+@media (min-width: 600px) {
+    .filteredRooms .noRoomsFoundMessage {
+        width: 80%;
+    }
+}
+
+@media (min-width: 992px) {
+    .filteredRooms .noRoomsFoundMessage {
+        font-size: 30px;
+        height: 200px;
+    }
 }
 
 

@@ -28,7 +28,7 @@ function Navbar() {
     }
 
     const notToggledProperties = {
-        marginTop: -135, 
+        marginTop: -120, 
         MsFilter: "'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)'",
         filter: "alpha(opacity=0)",
         MozOpacity : 0,

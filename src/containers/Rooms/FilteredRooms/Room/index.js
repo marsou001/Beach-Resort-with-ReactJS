@@ -8,7 +8,7 @@ function Room ({ id, image, type, price }) {
             <div className="link">
                 <Link to={`/rooms/${id}`}>Featured</Link>
             </div>
-            <img src={image} alt="blabla" title="blabla" />  
+            <img src={image} alt="room" title="room" />  
             <div className="price">
                 <span className="priceTag">${price}</span><span className="perNight">per night</span>
             </div>

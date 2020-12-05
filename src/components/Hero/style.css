@@ -1,5 +1,6 @@
 .hero {
     /* background-image: url("../../images/defaultBcg.jpeg"); */
+    background-attachment: fixed;
     background-position: 50%;
     background-size: cover;
     position: relative;
@@ -56,7 +57,7 @@
     padding: 10px 15px;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
     .hero .front {
         width: 500px;
     }

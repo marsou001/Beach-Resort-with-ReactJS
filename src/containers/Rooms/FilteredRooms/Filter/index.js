@@ -1,34 +1,34 @@
-import React from 'react'
+import React from 'react';
 import './style.css';
 
-function Filter () {
+function Filter (props) {
     return (
         <div className="filter">
             <div className="filterUnit">
                 <label htmlFor="type">Room type</label>                    
-                <select id="type">
+                <select id="type" onChange={props.getPreferences}>
                     <option value="all">All</option>
-                    <option value="triple">Triple</option>
                     <option value="family">Family</option>
                     <option value="double">Double</option>
                     <option value="single">Single</option>
+                    <option value="presidential">Presidential</option>
                 </select>   
             </div>
             <div className="filterUnit">
                 <label htmlFor="guests">Guests</label>                    
-                <select id="guests">
+                <select id="guests" onChange={props.getPreferences}>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                 </select>   
             </div>    
             <div className="filterUnit">
-                <label htmlFor="price">Room Price $600</label>                    
-                <input type="range" id="price" min="0" max="600" />  
+                <label htmlFor="price">Room Price ${props.price}</label>                    
+                <input type="range" id="price" min="0" max="600" onChange={props.getPreferences} value={props.price} />  
             </div>
             <div className="filterUnit">
-                <label htmlFor="size">Room Price $600</label>                    
-                <input type="number" id="size" min="0" max="3000" />  
+                <label htmlFor="size">Room Size {props.size}</label>                    
+                <input type="number" id="size" min="0" max="1000" onChange={props.getPreferences} />  
             </div>    
             <div className="filterUnit">                                        
                 <div className="checkboxUnit">
