@@ -43,23 +43,12 @@ function FilteredRooms() {
                 filteredRooms = filteredRooms.filter(room => room.fields.size <= Number(target.value));
                 setSize(target.value);
                 stateRef.current.size = target.value;
-                break;
-                // case 'breakfast':
-                //     filteredRooms = filteredRooms.filter(room => room.fields.breakfast === target.checked);
-                //     console.log(target.checked)
-                //     setIsBreakfastOffered(target.checked);
-                //     stateRef.current.isBreakfastOffered = target.checked;
-                //     break;
+                break;                
                 case 'breakfast':                
                     filteredRooms = target.checked ? filteredRooms.filter(room => room.fields.breakfast) : [...filteredRooms];                    
                     setIsBreakfastOffered(target.checked);
                     stateRef.current.isBreakfastOffered = target.checked;
-                    break;
-                // case 'pets':
-                //     filteredRooms = filteredRooms.filter(room => room.fields.pets === target.checked);
-                //     setIsPetsAllowed(target.checked);
-                //     stateRef.current.isPetsAllowed = target.checked;
-                //     break;
+                    break;                
                 case 'pets':                
                     filteredRooms = target.checked ? filteredRooms.filter(room => room.fields.pets) : [...filteredRooms];                    
                     setIsPetsAllowed(target.checked);
@@ -74,19 +63,13 @@ function FilteredRooms() {
         filteredRooms = filteredRooms.filter(room => room.fields.capacity <= (Number(stateRef.current.guests) || Number(guests)));        
         filteredRooms = filteredRooms.filter(room => room.fields.price <= (Number(stateRef.current.price) || Number(price)));        
         filteredRooms = filteredRooms.filter(room => room.fields.size <= (Number(stateRef.current.size) || Number(size)));
-        // filteredRooms = filteredRooms.filter(room => room.fields.breakfast === (stateRef.current.isBreakfastOffered || isBreakfastOffered));
-        // filteredRooms = stateRef.current.isBreakfastOffered ? filteredRooms.filter(room => room.fields.breakfast)
-        //                                                       : (isBreakfastOffered ? filteredRooms.filter(room => room.fields.breakfast)
-        //                                                                             : [...filteredRooms]);
+                                                                                
         if (stateRef.current.isBreakfastOffered !== undefined) {
             filteredRooms = stateRef.current.isBreakfastOffered ? filteredRooms.filter(room => room.fields.breakfast) : [...filteredRooms];
         } else {
             filteredRooms = isBreakfastOffered ? filteredRooms.filter(room => room.fields.breakfast) : [...filteredRooms];
         }
-        // console.log(filteredRooms)
-        // console.log(stateRef.current.isBreakfastOffered || isBreakfastOffered)
-        // filteredRooms = filteredRooms.filter(room => room.fields.pets === stateRef.current.isPetsAllowed);
-        // console.log(filteredRooms)
+        
         if (stateRef.current.istPetsAllowed !== undefined) {
             filteredRooms = stateRef.current.istPetsAllowed ? filteredRooms.filter(room => room.fields.pets) : [...filteredRooms];
         } else {
