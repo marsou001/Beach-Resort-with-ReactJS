@@ -32,12 +32,12 @@ function Filter (props) {
             </div>    
             <div className="filterUnit">                                        
                 <div className="checkboxUnit">
-                    <input type="checkbox" id="breakfast" />  
+                    <input type="checkbox" id="breakfast" onChange={props.getPreferences} />  
                     <label htmlFor="breakfast" className="inlineCheckbox">breakfast</label>
                 </div>
 
                 <div className="checkboxUnit">
-                    <input type="checkbox" id="pets" />
+                    <input type="checkbox" id="pets" onChange={props.getPreferences} />
                     <label htmlFor="pets" className="inlineCheckbox">pets</label>
                 </div>                                        
             </div>       
