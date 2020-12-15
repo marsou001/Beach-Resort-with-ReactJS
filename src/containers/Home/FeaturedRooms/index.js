@@ -10,7 +10,7 @@ function FeaturedRooms() {
             <div className="roomsBox">
                 <div className="roomsBoxItem fit-box">
                     <div className="link">
-                        <Link to="/rooms">Featured</Link>
+                        <Link to="/rooms/12">Featured</Link>
                     </div>
                     <img src={require("../../../images/room-12.jpeg")} alt="blabla" title="blabla" />
                     <div className="price">
@@ -22,7 +22,7 @@ function FeaturedRooms() {
                 </div>
                 <div className="roomsBoxItem fit-box">
                     <div className="link">
-                    <   Link to="/rooms">Featured</Link>
+                    <   Link to="/rooms/8">Featured</Link>
                     </div>
                     <img src={require("../../../images/room-8.jpeg")} alt="blabla" title="blabla" />
                     <div className="price">
@@ -34,7 +34,7 @@ function FeaturedRooms() {
                 </div>
                 <div className="roomsBoxItem fit-box">
                     <div className="link">
-                        <Link to="/rooms">Featured</Link>
+                        <Link to="/rooms/4">Featured</Link>
                     </div>
                     <img src={require("../../../images/room-4.jpeg")} alt="blabla" title="blabla" />
                     <div className="price">

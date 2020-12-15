@@ -1,33 +1,15 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import './style.css';
-// import Bcg from "../../images/defaultBcg.jpeg";
-// import Room1 from "../../images/room-1.jpeg";
-// import Data from '../../Data/data';
 
 function Hero(props) {
-    const image = `../../images/${props.image}.jpeg`;
-    console.log(props.image)
-    // let image;
-
-    // switch(window.location.pathname) {
-    //     case "/":
-    //         image = Bcg;
-    //         break;
-    //     case "/rooms":
-    //         image = Room1;
-    //         break;
-    //     default:
-    //         image = Bcg;
-    // }
-
-    // console.log(image);
+    const location = useLocation();
+    const id = props.id;
+    const defaultBackgroundImage = `url(${require("../../images/defaultBcg.jpeg")})`;
+    const image = (id && location.pathname === `/rooms/${id}`) ? 'url(' + require(`../../images/room-${id}.jpeg`) + ')' : defaultBackgroundImage;
     
     return (
-        // <div className="hero" style={{backgroundImage: `url("../../images/defaultBcg.jpeg")`}}>
-        <div className="hero" style={{backgroundImage: `url(${require("../../images/defaultBcg.jpeg")})`}}> 
-        {/* <div className="hero" style={{backgroundImage: `url(${require(image)})`}}>   */}
-        {/* <div className="hero" style={{backgroundImage: props.image}}>    */}
-        {/* <div className="hero" style={{backgroundImage: `url(${image})`}}>     */}
+        <div className="hero" style={{backgroundImage: image}}>         
             {props.children}
         </div>
     )

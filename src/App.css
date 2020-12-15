@@ -2,16 +2,6 @@ html , body {
   height: 100%;
 }
 
-* {
-  margin:0;
-  padding: 0;
-}
-
-.resize-animation-stopper * {
-  animation: none !important;
-  transition: none !important;
-}
-
 body {
   font-size: 30px;  
 }  

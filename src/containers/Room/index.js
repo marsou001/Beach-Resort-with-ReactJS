@@ -21,7 +21,7 @@ function Room (props) {
 
     return (
         <div className="room">
-            <Front image={images[0].fields.file.url} />
+            <Front image={images[0].fields.file.url} id={props.match.params.id} />
             <main>
                 <Images images={images} />
                 <Details 

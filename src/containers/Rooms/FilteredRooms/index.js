@@ -54,6 +54,8 @@ function FilteredRooms() {
                     setIsPetsAllowed(target.checked);
                     stateRef.current.istPetsAllowed = target.checked;
                     break;
+                default:
+                    return;
         }
 
         if (target.id !== 'type') {

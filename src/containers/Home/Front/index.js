@@ -1,13 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../../../components/Hero';
-import Bcg from "../../../images/defaultBcg.jpeg";
 
-function Front() {
-    return (
-        // <Hero image={require("../../../images/defaultBcg.jpeg")}>
-        <Hero image={Bcg}>
-        {/* <Hero image="defaultBcg"> */}
+function Front() {    
+    return (        
+        <Hero>
             <div className="front">
                 <h1>Luxurious Rooms</h1>
                 <hr />
