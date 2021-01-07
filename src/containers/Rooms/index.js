@@ -16,7 +16,7 @@ function FilteredRooms() {
 
     const current = {};
     
-    const getPreferences = e => {
+    const handleChange = e => {
         const target = e.target;
         let filteredRooms = [...Data];        
         
@@ -97,7 +97,7 @@ function FilteredRooms() {
                 <h1>Search Rooms</h1>
                 <hr />
                 <Filter 
-                    getPreferences={getPreferences}                
+                    handleChange={handleChange}                
                     price={price} 
                     size={size}                 
                 />
