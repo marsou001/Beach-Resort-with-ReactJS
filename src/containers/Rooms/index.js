@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 import Front from './Front';
 import Filter from './Filter';
@@ -13,9 +13,8 @@ function FilteredRooms() {
     const [size, setSize] = useState(500);
     const [isBreakfastOffered, setIsBreakfastOffered] = useState(null);
     const [istPetsAllowed, setIsPetsAllowed] = useState(null);
-    const stateRef = useRef();
 
-    stateRef.current = {};
+    const current = {};
     
     const getPreferences = e => {
         const target = e.target;
@@ -25,55 +24,55 @@ function FilteredRooms() {
             case 'type':
                 if (target.value !== 'all') {
                     filteredRooms = filteredRooms.filter(room => room.fields.type === target.value);    
-                    stateRef.current.type = target.value;                           
+                    current.type = target.value;                           
                 } 
                 setType(target.value);                
                 break;
             case 'guests':
                 filteredRooms = filteredRooms.filter(room => room.fields.capacity <= Number(target.value));
                 setGuests(target.value);
-                stateRef.current.guests = target.value;
+                current.guests = target.value;
                 break;
             case 'price':
                 filteredRooms = filteredRooms.filter(room => room.fields.price <= Number(target.value));
                 setPrice(target.value);
-                stateRef.current.price = target.value;                
+                current.price = target.value;                
                 break;
             case 'size':
                 filteredRooms = filteredRooms.filter(room => room.fields.size <= Number(target.value));
                 setSize(target.value);
-                stateRef.current.size = target.value;
+                current.size = target.value;
                 break;                
                 case 'breakfast':                
                     filteredRooms = target.checked ? filteredRooms.filter(room => room.fields.breakfast) : [...filteredRooms];                    
                     setIsBreakfastOffered(target.checked);
-                    stateRef.current.isBreakfastOffered = target.checked;
+                    current.isBreakfastOffered = target.checked;
                     break;                
                 case 'pets':                
                     filteredRooms = target.checked ? filteredRooms.filter(room => room.fields.pets) : [...filteredRooms];                    
                     setIsPetsAllowed(target.checked);
-                    stateRef.current.istPetsAllowed = target.checked;
+                    current.istPetsAllowed = target.checked;
                     break;
                 default:
                     return;
         }
 
         if (target.id !== 'type') {
-            filteredRooms = (type === 'all') ? [...filteredRooms] : filteredRooms.filter(room => room.fields.type === (stateRef.current.type || type));
+            filteredRooms = (type === 'all') ? [...filteredRooms] : filteredRooms.filter(room => room.fields.type === (current.type || type));
         }
         
-        filteredRooms = filteredRooms.filter(room => room.fields.capacity <= (Number(stateRef.current.guests) || Number(guests)));        
-        filteredRooms = filteredRooms.filter(room => room.fields.price <= (Number(stateRef.current.price) || Number(price)));        
-        filteredRooms = filteredRooms.filter(room => room.fields.size <= (Number(stateRef.current.size) || Number(size)));
+        filteredRooms = filteredRooms.filter(room => room.fields.capacity <= (Number(current.guests) || Number(guests)));        
+        filteredRooms = filteredRooms.filter(room => room.fields.price <= (Number(current.price) || Number(price)));        
+        filteredRooms = filteredRooms.filter(room => room.fields.size <= (Number(current.size) || Number(size)));
                                                                                 
-        if (stateRef.current.isBreakfastOffered !== undefined) {
-            filteredRooms = stateRef.current.isBreakfastOffered ? filteredRooms.filter(room => room.fields.breakfast) : [...filteredRooms];
+        if (current.isBreakfastOffered !== undefined) {
+            filteredRooms = current.isBreakfastOffered ? filteredRooms.filter(room => room.fields.breakfast) : [...filteredRooms];
         } else {
             filteredRooms = isBreakfastOffered ? filteredRooms.filter(room => room.fields.breakfast) : [...filteredRooms];
         }
         
-        if (stateRef.current.istPetsAllowed !== undefined) {
-            filteredRooms = stateRef.current.istPetsAllowed ? filteredRooms.filter(room => room.fields.pets) : [...filteredRooms];
+        if (current.istPetsAllowed !== undefined) {
+            filteredRooms = current.istPetsAllowed ? filteredRooms.filter(room => room.fields.pets) : [...filteredRooms];
         } else {
             filteredRooms = istPetsAllowed ? filteredRooms.filter(room => room.fields.pets) : [...filteredRooms];
         }
