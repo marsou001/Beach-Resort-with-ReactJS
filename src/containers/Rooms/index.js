@@ -21,45 +21,35 @@ function FilteredRooms() {
         let filteredRooms = [...Data];        
         
         switch(target.id) {
-            case 'type':
-                if (target.value !== 'all') {
-                    filteredRooms = filteredRooms.filter(room => room.fields.type === target.value);    
-                    current.type = target.value;                           
-                } 
+            case 'type':                                             
                 setType(target.value);                
+                current.type = target.value;  
                 break;
             case 'guests':
-                filteredRooms = filteredRooms.filter(room => room.fields.capacity <= Number(target.value));
                 setGuests(target.value);
                 current.guests = target.value;
                 break;
             case 'price':
-                filteredRooms = filteredRooms.filter(room => room.fields.price <= Number(target.value));
                 setPrice(target.value);
                 current.price = target.value;                
                 break;
             case 'size':
-                filteredRooms = filteredRooms.filter(room => room.fields.size <= Number(target.value));
                 setSize(target.value);
                 current.size = target.value;
                 break;                
-                case 'breakfast':                
-                    filteredRooms = target.checked ? filteredRooms.filter(room => room.fields.breakfast) : [...filteredRooms];                    
-                    setIsBreakfastOffered(target.checked);
-                    current.isBreakfastOffered = target.checked;
-                    break;                
-                case 'pets':                
-                    filteredRooms = target.checked ? filteredRooms.filter(room => room.fields.pets) : [...filteredRooms];                    
-                    setIsPetsAllowed(target.checked);
-                    current.istPetsAllowed = target.checked;
-                    break;
-                default:
-                    return;
+            case 'breakfast':                
+                setIsBreakfastOffered(target.checked);
+                current.isBreakfastOffered = target.checked;
+                break;                
+            case 'pets':                
+                setIsPetsAllowed(target.checked);
+                current.istPetsAllowed = target.checked;
+                break;
+            default:
+                return;
         }
-
-        if (target.id !== 'type') {
-            filteredRooms = (type === 'all') ? [...filteredRooms] : filteredRooms.filter(room => room.fields.type === (current.type || type));
-        }
+        
+        filteredRooms = ((current.type || type) === 'all') ? [...filteredRooms] : filteredRooms.filter(room => room.fields.type === (current.type || type));
         
         filteredRooms = filteredRooms.filter(room => room.fields.capacity <= (Number(current.guests) || Number(guests)));        
         filteredRooms = filteredRooms.filter(room => room.fields.price <= (Number(current.price) || Number(price)));        
