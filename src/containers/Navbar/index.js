@@ -1,7 +1,8 @@
-// import React, { useState, useEffect } from 'react';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
+
+let resizeTimer;
 
 function Navbar() {
     const [toggle, setToggle] = useState(false);    
@@ -56,7 +57,20 @@ function Navbar() {
 
     const toggleNavbar = () => {
         setToggle(!toggle);
-    }       
+    }           
+
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            document.body.classList.add("resize-animation-stopper");
+            if (resizeTimer) {
+                clearTimeout(resizeTimer);
+            }
+            resizeTimer = setTimeout(() => {
+                document.body.classList.remove("resize-animation-stopper");
+            }, 400);
+            setToggle(window.innerWidth > 992 ? true : false);
+        })
+    }, [])
 
     return (
         <nav>
