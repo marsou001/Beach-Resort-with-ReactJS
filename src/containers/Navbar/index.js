@@ -30,7 +30,7 @@ function Navbar() {
     }
 
     const notToggledProperties = {
-        marginTop: -120, 
+        marginTop: window.innerWidth > 992 ? -120 : -110, 
         MsFilter: "'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)'",
         filter: "alpha(opacity=0)",
         MozOpacity : 0,
